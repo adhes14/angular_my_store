@@ -15,6 +15,8 @@ export class AppComponent {
     age: 25,
     avatar: 'https://indiehoy.com/wp-content/uploads/2022/05/naruto.jpg'
   }
+  names: string[] = ['Nico', 'Juli', 'Santi'];
+  newName: string = '';
 
   toggleButton() {
     this.btnDisabled = !this.btnDisabled;
@@ -32,5 +34,14 @@ export class AppComponent {
   changeName(event: Event) {
     const element = event.target as HTMLInputElement;
     this.person.name = element.value;
+  }
+
+  addName() {
+    this.names.push(this.newName);
+    this.newName = '';
+  }
+
+  deleteName(index: number) {
+    this.names.splice(index, 1);
   }
 }
