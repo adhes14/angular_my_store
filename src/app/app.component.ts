@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product } from './product.model';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,40 @@ export class AppComponent {
   }
   names: string[] = ['Nico', 'Juli', 'Santi'];
   newName: string = '';
+
+  products: Product[] = [
+    {
+      name: 'The best toy',
+      price: 565,
+      image: './assets/images/toy.jpg',
+      category: 'all'
+    },
+    {
+      name: 'Almost new bike',
+      price: 852,
+      image: './assets/images/bike.jpg'
+    },
+    {
+      name: 'Album collection',
+      price: 565,
+      image: './assets/images/album.jpg'
+    },
+    {
+      name: 'My books',
+      price: 565,
+      image: './assets/images/books.jpg'
+    },
+    {
+      name: 'Glasses to improve your vision',
+      price: 565,
+      image: './assets/images/glasses.jpg'
+    },
+    {
+      name: 'The house of your dreams',
+      price: 565,
+      image: './assets/images/house.jpg'
+    }
+  ]
 
   toggleButton() {
     this.btnDisabled = !this.btnDisabled;
