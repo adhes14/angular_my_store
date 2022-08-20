@@ -7,6 +7,7 @@ import { Product } from './product.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  widthImg = 10;
   name = 'Adhemar';
   age = 18;
   img = 'https://indiehoy.com/wp-content/uploads/2022/05/naruto.jpg';
@@ -18,6 +19,11 @@ export class AppComponent {
   }
   names: string[] = ['Nico', 'Juli', 'Santi'];
   newName: string = '';
+  box = {
+    width: 100,
+    height: 100,
+    background: 'red'
+  }
 
   products: Product[] = [
     {

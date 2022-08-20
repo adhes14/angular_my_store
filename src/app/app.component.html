@@ -1,3 +1,49 @@
+<h1>Class & Style</h1>
+<input type="text" required #nameInput4="ngModel" [(ngModel)]="person.name">
+<hr class="line-error"
+  [ngClass]="{
+    'valid': nameInput4.valid,
+    'invalid': nameInput4.invalid
+  }"
+/>
+<p class="message-error" [class.invalid]="nameInput4.invalid">
+  This field is required
+</p>
+<div class="styles">
+  <div>
+    <input type="number" [(ngModel)]="box.width">
+    <input type="number" [(ngModel)]="box.height">
+    <input type="color" [(ngModel)]="box.background">
+  </div>
+  <div [ngStyle]="{
+    'width.px': box.width,
+    'heightx': box.height,
+    'background-color': box.background,
+    'display': 'block'
+  }"></div>
+</div>
+
+<hr/>
+<h1>Class & Style</h1>
+<input type="text" required #nameInput2="ngModel" [(ngModel)]="person.name">
+<p class="message-error" [class.invalid]="nameInput2.invalid">
+  This field is required
+</p>
+<label>Name</label>
+<input type="text" required #nameInput3="ngModel" [(ngModel)]="person.name">
+<p [style.font-style]="nameInput3.invalid ? 'italic' : 'normal'">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum nesciunt quia quod numquam nam placeat doloribus
+</p>
+<div class="styles">
+  <div>
+    <input type="text" [(ngModel)]="widthImg">
+  </div>
+  <div>
+    <img [style.width.px]="widthImg" [src]="person.avatar">
+  </div>
+</div>
+
+<hr/>
 <h1>ngSwitch</h1>
 <input type="text" required [(ngModel)]="person.name">
 <div [ngSwitch]="person.name">
@@ -17,9 +63,9 @@
 
 <hr/>
 <h1>*ngFor Objs</h1>
-<div>
+<div class="products--grid">
   <div *ngFor="let product of products">
-    <img [src]="product.image" [alt]="product.name" width="250">
+    <img [src]="product.image" [alt]="product.name">
     <h2>{{product.price}}</h2>
     <p>{{product.name}}</p>
   </div>
@@ -78,4 +124,4 @@
 <h2>{{ 'Hello world '.repeat(5) }}</h2>
 <p>3 + 3 = {{ 3 + 3 }}</p>
 <h3>Hello, I'm {{ name }} and {{ age }} years old</h3>
-<img src={{img}} alt="image">
+<img src={{img}} alt="image" width="100">
