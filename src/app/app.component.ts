@@ -12,6 +12,13 @@ export class AppComponent {
   age = 18;
   img = 'https://indiehoy.com/wp-content/uploads/2022/05/naruto.jpg';
   btnDisabled = true;
+
+  register = {
+    name: '',
+    email: '',
+    password: ''
+  }
+
   person = {
     name: 'Adhemar',
     age: 25,
@@ -84,5 +91,9 @@ export class AppComponent {
 
   deleteName(index: number) {
     this.names.splice(index, 1);
+  }
+
+  onRegister() {
+    console.log(this.register);
   }
 }
